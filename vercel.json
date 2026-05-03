@@ -1,7 +1,23 @@
 {
   "version": 2,
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/backend/server.js" },
-    { "source": "/(.*)",     "destination": "/frontend/index.html" }
+  "functions": {
+    "backend/server.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/backend/server.js"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/frontend/favicon.ico",
+      "continue": true
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/index.html"
+    }
   ]
 }
