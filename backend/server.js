@@ -8,7 +8,8 @@ const path     = require('path');
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '..', 'frontend')));
+
+app.use(express.static(path.join(__dirname, '..')));
 
 // Connexion MongoDB cachée (important pour Vercel serverless)
 let cachedConn = null;
@@ -113,7 +114,7 @@ app.get('/api/latest', async (req, res) => {
 
 // Servir le dashboard
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 // Export pour Vercel (OBLIGATOIRE - remplace app.listen)
