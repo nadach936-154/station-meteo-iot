@@ -162,3 +162,6 @@ Dans Wokwi, clique sur le capteur DHT22 dans le schéma pour changer :
 | Vercel — Build failed | Vérifier que `vercel.json` est bien à la racine du projet |
 | Atlas — connexion refusée | Vérifier `0.0.0.0/0` dans Network Access |
 | Dashboard vide | Attendre 10 secondes après avoir lancé Wokwi |
+=======
+# station-meteo-iot
+
